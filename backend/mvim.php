@@ -1,55 +1,48 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-                    <p class="t cent botli">網站標題管理</p>
-                    <!-- 修改action裡的東西 -->
+                    <p class="t cent botli">動畫圖片管理</p>
                     <form method="post"  action="api/edit.php">
-                        <table width="100%">
+                        <table width="100%" class="cent">
                             <tbody>
                                 <tr class="yel">
-                                    <td width="45%">網站標題</td>
-                                    <td width="23%">替代文字</td>
-                                    <td width="7%">顯示</td>
-                                    <td width="7%">刪除</td>
+                                    <td>動畫圖片</td>
+                                    <td>顯示</td>
+                                    <td>刪除</td>
                                     <td></td>
                                 </tr>
-                <!-- 新增以下內容 -->
                 <?php
-                $rows=$Title->all();
+                $rows=$Mvim->all();
                 foreach ($rows as $key => $value) {
                 ?>
                 <tr>
                     <td>
-                        <img src="img/<?=$value['img'];?>" style="width:300px;height:30px;">
+                        <img src="img/<?=$value['img'];?>" style="width:150px; height: 150px;">
                     </td>
                     <td>
-                        <input type="text" name='text[]' value="<?=$value['text'];?>">
-                    </td>
-                    <td>
-                        <input type="radio" name="sh" value="<?=$value['id'];?>" <?=($value['sh']==1)?"checked":"";?>>
+                        <input type="checkbox" name="sh[]" value="<?=$value['id'];?>" <?=($value['sh']==1)?"checked":"";?>>
                     </td>
                     <td>
                         <input type="checkbox" name="del[]" value="<?=$value['id'];?>">    
                     </td>
                     <td>
-                        <input type="button"  value="更新圖片" 
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/title_update.php?id=<?=$value['id'];?>&#39;)">
-                    </td>
+        <input type="button"  value="更換動畫" 
+            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/mvim_update.php?id=<?=$value['id'];?>&#39;)">
+    </td>
                     <input type="hidden" name="id[]" value="<?=$value['id'];?>">
                 </tr>
                 <?php
                 }
                 ?>
-                <!-- 到這結束 -->
                             </tbody>
                         </table>
                         <table style="margin-top:40px; width:70%;">
                             <tbody>
                                 <tr>
                                     <td width="200px"><input type="button"
-                                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/title.php&#39;)"
-                                            value="新增網站標題圖片"></td>
+                                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/mvim.php&#39;)"
+                                            value="新增動畫圖片"></td>
                                     <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置">
                                     <!-- 新增隱藏值 -->
-                                    <input type="hidden" name="table" value="title">
+                                    <input type="hidden" name="table" value="mvim">
                                     </td>
                                 </tr>
                             </tbody>

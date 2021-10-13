@@ -2,7 +2,7 @@
 <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
 <?php include "./frontend/marquee.php";?>
 <div style="height:32px; display:block;"></div>
-<!-- 新增2個div -->
+<!-- 複製檔案2裡的2個div -->
 <div style="width:100%; padding:2px; height:290px;">
 <div id="mwww" loop="true" style="width:100%; height:100%;">
 </div>
@@ -16,7 +16,7 @@
         echo "lin.push('img/{$mv['img']}');";
     }
     ?>
-
+// 接到這下面一樣
     var now = 0;
     ww();
 
@@ -32,18 +32,18 @@
         now = 0;
     }
 </script>
-<!-- 增加 -->
+<!-- 複製 -->
 <div
-        style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px; border:green dashed 3px; position:relative;">
-        <span class="t botli">最新消息區
-            <!-- 增加 -->
-        <?php
-        if($News->count(['sh'=>1])>5){
-            echo "<a href='index.php?do=news' style='float:right'>more...</a>";
-        }
+style="width:95%; padding:2px; height:190px; margin-top:10px; padding:5px 10px; border:green dashed 3px; position:relative;">
+<span class="t botli">最新消息區
+<!-- 增加 -->
+<?php
+if($News->count(['sh'=>1])>5){
+    echo "<a href='index.php?do=news' style='float:right'>more...</a>";
+}
 ?>
 </span>
-<ol class="ssaa" style="list-style-type: decimal;">
+<ul class="ssaa" style="list-style-type: decimal;">
 <!-- 增加 -->
 <?php
 $ns=$News->all(['sh'=>1]," limit 5 ");
@@ -55,8 +55,8 @@ foreach($ns as $news){
 }
 ?>
 
-</ol>
-<!-- 複製檔案2 div-altt做修改left有改 -->
+</ul>
+<!-- 複製檔案2 div-altt -->
 <div id="altt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 130px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
 
 

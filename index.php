@@ -59,6 +59,7 @@
 				}
 
 				?>
+                <!-- 到這結束接著下面 -->
                 </div>
                 <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
                 <!-- 總人數後增加 -->
@@ -103,19 +104,18 @@
                     <div class="cent" onclick='pp(1)'>
                         <img src="icon/up.jpg">
                     </div>
-                    <!-- 這裡增加 -->
                     <?php
 						$imgs=$Image->all(['sh'=>1]);
 						foreach($imgs as $key => $img){
-							echo "<div class='cent' id='ssaa$key'>";
+							echo "<div class='cent im' id='ssaa$key'>";
 							echo "<img src='img/{$img['img']}' style='width:150px;height:103px;margin:2px;border:2px solid orange'>";
 							echo "</div>";
 						}
 						?>
-                    <!-- 這裡增加 -->
                     <div class="cent" onclick='pp(2)'>
                         <img src="icon/dn.jpg">
                     </div>
+                    <!-- 增加到這結束 -->
                     <!-- 這裡num要改 -->
                     <script>
                     var nowpage = 0,
