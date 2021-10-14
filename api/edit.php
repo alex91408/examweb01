@@ -12,7 +12,7 @@ foreach($ids as $key => $id){
 
         switch($table){
             case 'title';
-            $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id)?1:0;
+            $row['sh']=(isset($_POST['sh']) && $_POST['sh']==$id);
             $row['text']=$_POST['text'][$key];
             break;
             case 'admin';
@@ -20,12 +20,12 @@ foreach($ids as $key => $id){
             $row['pw']=$_POST['pw'][$key];
             break;
             case 'menu';
-            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']));
             $row['text']=$_POST['text'][$key];
             $row['href']=$_POST['href'][$key];
             break;
             default:
-            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']))?1:0;
+            $row['sh']=(isset($_POST['sh']) && in_array($id,$_POST['sh']));
             $row['text']=$_POST['text'][$key];
         }
         $db->save($row);
