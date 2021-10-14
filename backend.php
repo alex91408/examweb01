@@ -102,7 +102,7 @@ text-align: center;
                 <!-- 把網站標題管理新增至bk/title -->
                 <!-- 新增do -->
                <?php
-               $do=(isset($_GET['do']))?$_GET['do']:'title';
+               $do=$_GET['do']??'title';
                $file="backend/" .$do.".php";
                if(file_exists($file)){
                    include $file;

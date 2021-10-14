@@ -69,7 +69,7 @@
             </div>
             <!--這裡增加  -->
             <?php
-								$do=(isset($_GET['do']))?$_GET['do']:'main';
+								$do=$_GET['do']??'main';
 								$file="frontend/".$do.".php";
 								// 先判斷檔案是否存在
 								if(file_exists($file)){
