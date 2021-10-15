@@ -14,26 +14,26 @@
                 <!-- 新增以下內容 -->
                 <?php
                 $rows=$Title->all();
-                foreach ($rows as $key => $value) {
+                foreach ($rows as $row) {
                 ?>
                 <tr>
                     <td>
-                        <img src="img/<?=$value['img'];?>" style="width:300px;height:30px;">
+                        <img src="img/<?=$row['img'];?>" style="width:300px;height:30px;">
                     </td>
                     <td>
-                        <input type="text" name='text[]' value="<?=$value['text'];?>">
+                        <input type="text" name='text[]' value="<?=$row['text'];?>">
                     </td>
                     <td>
-                        <input type="radio" name="sh" value="<?=$value['id'];?>" <?=($value['sh']==1)?"checked":"";?>>
+                        <input type="radio" name="sh" value="<?=$row['id'];?>" <?=$row['sh']==1?"checked":"";?>>
                     </td>
                     <td>
-                        <input type="checkbox" name="del[]" value="<?=$value['id'];?>">    
+                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>">    
                     </td>
                     <td>
                         <input type="button"  value="更新圖片" 
-                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/title_update.php?id=<?=$value['id'];?>&#39;)">
+                            onclick="op(&#39;#cover&#39;,&#39;#cvr&#39;,&#39;modal/title_update.php?id=<?=$row['id'];?>&#39;)">
                     </td>
-                    <input type="hidden" name="id[]" value="<?=$value['id'];?>">
+                    <input type="hidden" name="id[]" value="<?=$row['id'];?>">
                 </tr>
                 <?php
                 }

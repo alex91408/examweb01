@@ -1,8 +1,3 @@
-<?php
-if(isset($_SESSION['admin'])){
-	to("backend.php");
-}
-?>
 <!-- 上面刪到di這位置接下去 -->
 <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
 <?php include "./frontend/marquee.php";?>

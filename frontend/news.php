@@ -16,10 +16,10 @@ $start=($now-1)*$div;
 <ol start='<?=$start+1;?>'>
 <?php
 $rows=$News->all(['sh'=>1]," limit $start,$div");
-foreach($rows as $key=>$value){
+foreach($rows as $row){
 	echo "<li class='sswww'>";
-	echo mb_substr($value['text'],0,20)."...";
-	echo "<span class='all' style='display:none'>{$value['text']}</span>";
+	echo mb_substr($row['text'],0,20)."...";
+	echo "<span class='all' style='display:none'>{$row['text']}</span>";
 	echo "</li>";
 }
 ?>
@@ -41,7 +41,7 @@ echo "<a class='bl' href='?do=news&p=$i' style='font-size:$fontsize'> $i </a>";
 	?>
     </div>
 	                </div>
-				<!-- 再加入下面的div-alt裡面記得家<pre> -->
+				<!-- 再接著下面div-alt裡面記得家<pre> -->
                 <div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
                     	<script>
 						$(".sswww").hover(

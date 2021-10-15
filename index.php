@@ -39,22 +39,19 @@
                     <!-- 這裡增加 -->
                     <?php
 				$mus=$Menu->all(['sh'=>1,'parent'=>0]);
-				foreach ($mus as $key => $value) {
+				foreach ($mus as  $mu) {
 					echo "<div class='mainmu cent'>";
-					echo "<a href='{$value['href']}'>{$value['text']}</a>";
+					echo "<a href='{$mu['href']}'>{$mu['text']}</a>";
 					//以下放次選單
 					echo "<div class='mw'>";
 					
-					$subs=$Menu->all(['parent'=>$value['id']]);
-					foreach ($subs as $k => $v) {
+					$subs=$Menu->all(['sh'=>1,'parent'=>$mu['id']]);
+					foreach ($subs as $su) {
 						echo "<div class='mainmu2 cent'>";
-						echo "<a href='{$v['href']}'>{$v['text']}</a>";
-
+						echo "<a href='{$su['href']}'>{$su['text']}</a>";
 						echo "</div>";
 					}
-					
 					echo "</div>";
-					
 					echo "</div>";
 				}
 
