@@ -12,7 +12,7 @@
     </tr>
     <?php
         $rows=$Menu->all(['parent'=>$_GET['id']]);
-        foreach ($rows as $key => $value) {
+        foreach ($rows as  $value) {
     ?>
     <tr>
         <td><input type="text" name="text[]" value="<?=$value['text'];?>"></td>
